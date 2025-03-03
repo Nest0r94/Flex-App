@@ -1,4 +1,4 @@
-package com.example.flexapp.ui.Grupos
+package com.example.flexapp.ui.groups
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -71,7 +71,7 @@ fun GroupCreateScreenPreview(){
 fun ComposableGroupName(
     onValueChange: (String) -> Unit
 ){
-    Row(){
+    Row{
         TextField(
             onValueChange = { onValueChange(it) },
             value = "",
@@ -87,7 +87,7 @@ fun ComposableListDispDetected(modifier: Modifier){
         modifier = modifier
     ){
         Text("Lista de dispositivos detectados")
-        LazyColumn(){
+        LazyColumn{
             items(grupoEjData.size){index->
                 GrupoListItem(grupoEjData[index])
             }
@@ -102,7 +102,7 @@ fun ComposableListDispConfigurated(modifier: Modifier){
         modifier = modifier
     ){
         Text("Lista de dispositivos configurados")
-        LazyColumn(){
+        LazyColumn{
             items(grupoEjData.size) { index ->
                 GrupoListItem(grupoEjData[index])
             }

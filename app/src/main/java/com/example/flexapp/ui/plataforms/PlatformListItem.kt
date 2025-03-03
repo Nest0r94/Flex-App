@@ -1,4 +1,4 @@
-package com.example.flexapp.ui.Plataformas
+package com.example.flexapp.ui.plataforms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -25,7 +25,7 @@ fun PlatformListItem(platform: PlatformItemData){
     }
 }
 
-@Preview()
+@Preview
 @Composable
 fun PlatformListItemPreview(){
     PlatformListItem(PlatformItemData("Grupo 1", "192.168.0.0"))

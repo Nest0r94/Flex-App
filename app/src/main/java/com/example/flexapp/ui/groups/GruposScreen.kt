@@ -1,4 +1,4 @@
-package com.example.flexapp.ui.Grupos
+package com.example.flexapp.ui.groups
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues

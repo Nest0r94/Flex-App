@@ -1,4 +1,4 @@
-package com.example.flexapp.ui.Grupos
+package com.example.flexapp.ui.groups
 
 data class GrupoItemData(
     val name: String,

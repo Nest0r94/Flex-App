@@ -1,4 +1,4 @@
-package com.example.flexapp.ui.Plataformas
+package com.example.flexapp.ui.plataforms
 
 data class PlatformItemData(
     val name: String,
@@ -6,7 +6,7 @@ data class PlatformItemData(
 )
 
 
-val grupoEjData: List<PlatformItemData> = listOf(
+val platformEjData: List<PlatformItemData> = listOf(
     PlatformItemData("Item 1", "192.168.0.0"),
     PlatformItemData("Item 2", "192.168.0.1"),
     PlatformItemData("Item 3", "192.168.0.2"),
