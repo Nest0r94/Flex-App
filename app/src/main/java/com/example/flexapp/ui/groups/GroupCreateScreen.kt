@@ -33,7 +33,8 @@ fun GroupCreateScreen(navHostController: NavHostController, paddingValues: Paddi
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         ComposableGroupName(
-            onValueChange = { groupName = it }
+            onValueChange = { groupName = it },
+            value = groupName
         )
 
         ComposableListDispDetected(
@@ -72,12 +73,15 @@ fun GroupCreateScreenPreview(){
 
 @Composable
 fun ComposableGroupName(
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
+    value: String
 ){
     Row{
         TextField(
-            onValueChange = { onValueChange(it) },
-            value = "",
+            onValueChange = {
+                onValueChange(it)
+                            },
+            value = value,
             label = { Text("Nombre del grupo") }
         )
     }
