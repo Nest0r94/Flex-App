@@ -21,13 +21,13 @@ fun NavigationGroupBar(navController: NavHostController) {
         NavigationBarItem(
             selected = true,
             onClick = { navController.navigate(NavGroupAcelerations) },
-            icon = { Icon(painterResource(R.drawable.ic_launcher_foreground), null) },
+            icon = { Icon(painterResource(R.drawable.ic_settings_24), null) },
             label = { Text("Aceleraciones") }
         )
         NavigationBarItem(
             selected = true,
             onClick = { navController.navigate(NavGroupTest) },
-            icon = { Icon(painterResource(R.drawable.ic_launcher_foreground), null) },
+            icon = { Icon(painterResource(R.drawable.ic_settings_24), null) },
             label = { Text("Ensayos") }
         )
     }

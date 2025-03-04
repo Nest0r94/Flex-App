@@ -2,6 +2,7 @@ package com.example.flexapp.ui.plataforms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,10 +16,11 @@ import androidx.compose.ui.unit.dp
 fun PlatformListItem(platform: PlatformItemData){
     Column(
         modifier = Modifier
-            .padding(16.dp)
+            .padding(2.dp)
             .background(Color.Black)
             .padding(2.dp)
             .background(Color.White)
+            .fillMaxWidth()
     ){
         Text(text = platform.name)
         Text(text = platform.address)
