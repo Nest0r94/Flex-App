@@ -11,13 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.flexapp.ui.navigation.GroupCreateScreen
 
 @Composable
-fun GruposScreen(paddingValues: PaddingValues){
+fun GruposScreen(navHostController: NavHostController, paddingValues: PaddingValues){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -37,7 +40,10 @@ fun GruposScreen(paddingValues: PaddingValues){
         ComposableNewGroup(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(16.dp),
+            onNavigateToNewGroup = {
+                navHostController.navigate(GroupCreateScreen)
+            }
         )
     }
 }
@@ -45,7 +51,7 @@ fun GruposScreen(paddingValues: PaddingValues){
 @Preview
 @Composable
 fun GruposScreenPreview(){
-    GruposScreen(paddingValues = PaddingValues())
+    GruposScreen(navHostController = NavHostController(LocalContext.current), paddingValues = PaddingValues())
 }
 
 
@@ -71,9 +77,9 @@ fun ComposableListGroups(modifier: Modifier){
 }
 
 @Composable
-fun ComposableNewGroup(modifier: Modifier){
+fun ComposableNewGroup(modifier: Modifier, onNavigateToNewGroup: () -> Unit){
     Button(
         modifier = modifier,
-        onClick = {}
+        onClick = {onNavigateToNewGroup()}
     ) { Text("Nuevo Grupo")}
 }

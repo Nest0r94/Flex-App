@@ -1,6 +1,7 @@
 package com.example.flexapp.ui.groups
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,17 +17,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 
 @Composable
-fun GroupCreateScreen(){
+fun GroupCreateScreen(navHostController: NavHostController, paddingValues: PaddingValues){
     var groupName by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(paddingValues),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         ComposableGroupName(
@@ -61,7 +64,7 @@ fun GroupCreateScreen(){
 @Preview
 @Composable
 fun GroupCreateScreenPreview(){
-    GroupCreateScreen()
+    GroupCreateScreen(navHostController = NavHostController(LocalContext.current), paddingValues = PaddingValues())
 }
 
 

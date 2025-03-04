@@ -6,7 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.flexapp.ui.groups.GruposScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.flexapp.ui.navigation.NavigationGraph
 import com.example.flexapp.ui.theme.FlexAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,8 +15,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FlexAppTheme {
+
+                val navController = rememberNavController()
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GruposScreen(innerPadding)
+                    NavigationGraph(navController, innerPadding)
                 }
             }
         }
