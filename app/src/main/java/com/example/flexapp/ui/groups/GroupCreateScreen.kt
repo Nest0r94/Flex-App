@@ -21,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.flexapp.ui.navigation.GroupsScreen
 
 @Composable
 fun GroupCreateScreen(navHostController: NavHostController, paddingValues: PaddingValues){
@@ -52,7 +53,7 @@ fun GroupCreateScreen(navHostController: NavHostController, paddingValues: Paddi
 
         // Botón para crear el grupo
         Button(
-            onClick = {},
+            onClick = {navHostController.navigate(GroupsScreen)},
 
             /*modifier = Modifier
                 .weight(1f)*/
